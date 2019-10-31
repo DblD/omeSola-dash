@@ -1,0 +1,2380 @@
+[
+    {
+        "id": "afce8dd0.6b9e9",
+        "type": "tab",
+        "label": "ICC-OmeSola",
+        "disabled": false,
+        "info": "# Ome Sola Flow"
+    },
+    {
+        "id": "1a03ff81.f42f5",
+        "type": "tab",
+        "label": "Load Notification",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1325d034.c57c5",
+        "type": "tab",
+        "label": "Daily Avg Graph",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b12ede4d.d37a8",
+        "type": "tab",
+        "label": "Status Bar",
+        "disabled": false,
+        "info": "# Status of ${inverterName}"
+    },
+    {
+        "id": "f0813ced.c9d33",
+        "type": "subflow",
+        "name": "MovingAvg",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "e75dbdb4.b68e8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 720,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "65323a82.9fd254",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "time",
+                "type": "num",
+                "value": "10"
+            }
+        ],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "e0fa6591.0ace38",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "icc-omesola",
+        "broker": "192.168.1.211",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "a5f95ae3.557ae8",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "192.168.1.211",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "9711116b.295d58",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "6fb1f7b4.fc9dc8",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "ICC Ome Dash",
+            "hideToolbar": "false",
+            "allowSwipe": "true",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "6937ad25.372f94",
+        "type": "ui_group",
+        "z": "",
+        "name": "Load",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "22315aad.508046",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "9711116b.295d58",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a0490e9c.9e4d9",
+        "type": "ui_group",
+        "z": "",
+        "name": "PV",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "a5601e87.99614",
+        "type": "ui_group",
+        "z": "",
+        "name": "Grid",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "d648f65f.cbfa78",
+        "type": "ui_group",
+        "z": "",
+        "name": "Battery",
+        "tab": "",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "f3b6f0ce.0dda3",
+        "type": "ui_group",
+        "z": "",
+        "name": "Historical Overview",
+        "tab": "",
+        "order": 5,
+        "disp": true,
+        "width": 12,
+        "collapse": false
+    },
+    {
+        "id": "e20965ad.f27518",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "a5601e87.99614",
+        "order": 2,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "690af5a5.aefe9c",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "6937ad25.372f94",
+        "order": 2,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "5521cf91.54222",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "ICC-MQTT",
+        "broker": "192.168.1.211",
+        "port": "1883",
+        "tls": "",
+        "clientid": "nr.dbld.work",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "7c51da28.0f09b4",
+        "type": "ui_group",
+        "z": "",
+        "name": "Grid",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "1de1326a.0485be",
+        "type": "ui_group",
+        "z": "",
+        "name": "Load",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "bf5941a8.30d0f",
+        "type": "ui_group",
+        "z": "",
+        "name": "PV",
+        "tab": "",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9733e622.ef66b8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Battery",
+        "tab": "",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3de10d48.c84a42",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "ICC-MQTT",
+        "broker": "192.168.1.211",
+        "port": "1883",
+        "tls": "",
+        "clientid": "nr.dbld.work",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "a1feb31.562575",
+        "type": "ui_group",
+        "z": "",
+        "name": "Grid",
+        "tab": "4b606840.13edb8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "7b13569a.6042d8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Load",
+        "tab": "4b606840.13edb8",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "71f6aa02.8267b4",
+        "type": "ui_group",
+        "z": "",
+        "name": "PV",
+        "tab": "4b606840.13edb8",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "92201531.f9b968",
+        "type": "ui_group",
+        "z": "",
+        "name": "Battery",
+        "tab": "4b606840.13edb8",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c6eff04a.ab8d7",
+        "type": "ui_group",
+        "z": "",
+        "name": "Hour Graph",
+        "tab": "4b606840.13edb8",
+        "order": 6,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "4b606840.13edb8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "ICC",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d8472aa7.985998",
+        "type": "ui_tab",
+        "z": "",
+        "name": "ICC - Graphs",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e64684d0.2951d8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Day chart",
+        "tab": "d8472aa7.985998",
+        "order": 1,
+        "disp": true,
+        "width": 24,
+        "collapse": true
+    },
+    {
+        "id": "6a5b0a19.9ee824",
+        "type": "ui_group",
+        "z": "",
+        "name": "status",
+        "tab": "4b606840.13edb8",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": true
+    },
+    {
+        "id": "285f2971.ad1866",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "6a5b0a19.9ee824",
+        "order": 4,
+        "width": 24,
+        "height": 1
+    },
+    {
+        "id": "87a662f4.7a50d",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "6a5b0a19.9ee824",
+        "order": 12,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "b187c63d.4c2cf8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "6a5b0a19.9ee824",
+        "order": 13,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "daac9bd9.3f9bb8",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "6a5b0a19.9ee824",
+        "order": 15,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "8eb42206.e9452",
+        "type": "mqtt in",
+        "z": "afce8dd0.6b9e9",
+        "name": "ICC-MQTT",
+        "topic": "#",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "3de10d48.c84a42",
+        "x": 80,
+        "y": 100,
+        "wires": [
+            [
+                "8e1535e7.ca7c88",
+                "9dee1c83.56f4e"
+            ]
+        ]
+    },
+    {
+        "id": "5588cb21.643ed4",
+        "type": "ui_gauge",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "group": "a1feb31.562575",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Grid",
+        "label": "Watts",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "1200",
+        "seg2": "2500",
+        "x": 630,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "3929a9c4.f13126",
+        "type": "ui_gauge",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "group": "7b13569a.6042d8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Load",
+        "label": "Watts",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "1200",
+        "seg2": "2500",
+        "x": 850,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "8d05c261.58678",
+        "type": "ui_gauge",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "group": "71f6aa02.8267b4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "PV",
+        "label": "Watts",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "3500",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "800",
+        "seg2": "2000",
+        "x": 630,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "8e1535e7.ca7c88",
+        "type": "switch",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Inverter/GridWatts",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/GridVoltage",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/GridFreq",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/LoadWatts",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/InverterVolts",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/InverterFreq",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/LoadPercentage",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/PvWattsTotal",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/MPPT1_Volts",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/MPPT1_Amps",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Pylontech/Volts",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Pylontech/SOC",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Pylontech/Amps",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Pylontech/Watts",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Pylontech/Cycles",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Pylontech/Temperature",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 16,
+        "x": 230,
+        "y": 160,
+        "wires": [
+            [
+                "5588cb21.643ed4",
+                "7f6d0e9d.afbfd",
+                "8a8adcb4.62f47",
+                "93e3be00.61541"
+            ],
+            [
+                "59ce4e9.e0eb1b"
+            ],
+            [
+                "7fe9b23.fb1374c"
+            ],
+            [
+                "3929a9c4.f13126",
+                "e035e583.f395c8"
+            ],
+            [
+                "2f16de5b.ba2a62"
+            ],
+            [
+                "5b30e2e8.5636dc"
+            ],
+            [
+                "b4c3e782.16fe88",
+                "4f58c71a.bee568"
+            ],
+            [
+                "8d05c261.58678",
+                "c56afc9a.ba21f"
+            ],
+            [
+                "fc83b026.e5017"
+            ],
+            [
+                "46fe081e.35f938"
+            ],
+            [
+                "b363d812.891628"
+            ],
+            [
+                "fa68ac1f.efa53"
+            ],
+            [
+                "f5229378.5e65"
+            ],
+            [
+                "249bd058.7f358",
+                "6f45607f.0be47"
+            ],
+            [
+                "e30f442a.df47a8"
+            ],
+            [
+                "d2f5c406.c6ea28"
+            ]
+        ],
+        "outputLabels": [
+            "1.GridWatts",
+            "",
+            "",
+            "2.LoadWatts",
+            "",
+            "",
+            "",
+            "3.PvWattsTotal",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "4.BatteryWatts",
+            "",
+            ""
+        ]
+    },
+    {
+        "id": "93e3be00.61541",
+        "type": "debug",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1470,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "59ce4e9.e0eb1b",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "a1feb31.562575",
+        "order": 2,
+        "width": 3,
+        "height": 2,
+        "name": "",
+        "label": "Voltage",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 640,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "7fe9b23.fb1374c",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "a1feb31.562575",
+        "order": 3,
+        "width": 3,
+        "height": 2,
+        "name": "",
+        "label": "Freq",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 630,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2f16de5b.ba2a62",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "7b13569a.6042d8",
+        "order": 2,
+        "width": 2,
+        "height": 2,
+        "name": "",
+        "label": "Voltage",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 860,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5b30e2e8.5636dc",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "7b13569a.6042d8",
+        "order": 4,
+        "width": 2,
+        "height": 2,
+        "name": "",
+        "label": "Freq",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 850,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "b4c3e782.16fe88",
+        "type": "ui_gauge",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "group": "7b13569a.6042d8",
+        "order": 3,
+        "width": 2,
+        "height": 2,
+        "gtype": "gage",
+        "title": "Load %",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "33",
+        "seg2": "66",
+        "x": 850,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "fc83b026.e5017",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "71f6aa02.8267b4",
+        "order": 2,
+        "width": 3,
+        "height": 2,
+        "name": "",
+        "label": "Volts",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 630,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "46fe081e.35f938",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "71f6aa02.8267b4",
+        "order": 3,
+        "width": 3,
+        "height": 2,
+        "name": "",
+        "label": "Amps",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 630,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "b363d812.891628",
+        "type": "ui_gauge",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "group": "92201531.f9b968",
+        "order": 1,
+        "width": 3,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Volts",
+        "label": "V",
+        "format": "{{value}}",
+        "min": "45",
+        "max": "54",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 570,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "fa68ac1f.efa53",
+        "type": "ui_gauge",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "group": "92201531.f9b968",
+        "order": 2,
+        "width": 3,
+        "height": 4,
+        "gtype": "gage",
+        "title": "SOC",
+        "label": "V",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 570,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "f5229378.5e65",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "92201531.f9b968",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Amps",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 570,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "249bd058.7f358",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "92201531.f9b968",
+        "order": 4,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Watts",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 570,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "d2f5c406.c6ea28",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "92201531.f9b968",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Temp",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 570,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "e30f442a.df47a8",
+        "type": "ui_text",
+        "z": "afce8dd0.6b9e9",
+        "group": "92201531.f9b968",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "name": "",
+        "label": "Cycles",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 570,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "7f6d0e9d.afbfd",
+        "type": "ui_chart",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "group": "c6eff04a.ab8d7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Graph",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "8600",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#d62728",
+            "#1f77b4",
+            "#2ca02c",
+            "#864fb7",
+            "#98df8a",
+            "#791718",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 1410,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aa266532.c91e78",
+        "type": "join",
+        "z": "f0813ced.c9d33",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "${time}",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 430,
+        "y": 320,
+        "wires": [
+            [
+                "65323a82.9fd254"
+            ]
+        ]
+    },
+    {
+        "id": "a61ff463.105418",
+        "type": "change",
+        "z": "f0813ced.c9d33",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$number(msg.payload)\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "aa266532.c91e78"
+            ]
+        ]
+    },
+    {
+        "id": "65323a82.9fd254",
+        "type": "change",
+        "z": "f0813ced.c9d33",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$average(msg.payload)\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f8ee66b.3f04c8",
+        "type": "inject",
+        "z": "afce8dd0.6b9e9",
+        "name": "setAllows",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 720,
+        "wires": [
+            [
+                "3fb9b956.e9a3c6",
+                "e2677629.4d6df8",
+                "4eaee127.91d23"
+            ]
+        ]
+    },
+    {
+        "id": "3fb9b956.e9a3c6",
+        "type": "change",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowLoad",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 170,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2677629.4d6df8",
+        "type": "change",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowPV",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4eaee127.91d23",
+        "type": "change",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowBattery",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e035e583.f395c8",
+        "type": "switch",
+        "z": "afce8dd0.6b9e9",
+        "name": "allowLoad",
+        "property": "allowLoad",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1040,
+        "y": 620,
+        "wires": [
+            [
+                "1d475ef0.d35de1",
+                "7f6d0e9d.afbfd",
+                "93e3be00.61541"
+            ]
+        ]
+    },
+    {
+        "id": "8a8adcb4.62f47",
+        "type": "change",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowLoad",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1230,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d475ef0.d35de1",
+        "type": "change",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowPV",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1260,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "95122006.2ac15",
+        "type": "change",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowBattery",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1340,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c56afc9a.ba21f",
+        "type": "switch",
+        "z": "afce8dd0.6b9e9",
+        "name": "allowPV",
+        "property": "allowPV",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1040,
+        "y": 700,
+        "wires": [
+            [
+                "95122006.2ac15",
+                "7f6d0e9d.afbfd",
+                "93e3be00.61541"
+            ]
+        ]
+    },
+    {
+        "id": "6f45607f.0be47",
+        "type": "switch",
+        "z": "afce8dd0.6b9e9",
+        "name": "allowBattery",
+        "property": "allowBattery",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1050,
+        "y": 760,
+        "wires": [
+            [
+                "7f6d0e9d.afbfd",
+                "93e3be00.61541"
+            ]
+        ]
+    },
+    {
+        "id": "4f58c71a.bee568",
+        "type": "link out",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "links": [
+            "c43b4b29.14cae8"
+        ],
+        "x": 1395,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "f7efa4e8.870858",
+        "type": "prowl",
+        "z": "1a03ff81.f42f5",
+        "title": "ICC-OmeSola",
+        "priority": "2",
+        "url": "",
+        "name": "LoadHighNotification",
+        "x": 540,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d2c4bf85.459f5",
+        "type": "switch",
+        "z": "1a03ff81.f42f5",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "79",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 160,
+        "wires": [
+            [
+                "f7efa4e8.870858"
+            ]
+        ]
+    },
+    {
+        "id": "b5d3a322.3b823",
+        "type": "subflow:f0813ced.c9d33",
+        "z": "1a03ff81.f42f5",
+        "name": "",
+        "env": [],
+        "x": 190,
+        "y": 140,
+        "wires": [
+            [
+                "d2c4bf85.459f5"
+            ]
+        ]
+    },
+    {
+        "id": "c43b4b29.14cae8",
+        "type": "link in",
+        "z": "1a03ff81.f42f5",
+        "name": "",
+        "links": [
+            "4f58c71a.bee568"
+        ],
+        "x": 55,
+        "y": 340,
+        "wires": [
+            [
+                "b5d3a322.3b823"
+            ]
+        ]
+    },
+    {
+        "id": "9dee1c83.56f4e",
+        "type": "link out",
+        "z": "afce8dd0.6b9e9",
+        "name": "",
+        "links": [
+            "e4cacb22.791d98",
+            "7ff90797.a5e538"
+        ],
+        "x": 95,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "27de073c.a3d8c8",
+        "type": "subflow:f0813ced.c9d33",
+        "z": "1325d034.c57c5",
+        "name": "PV Watts",
+        "env": [
+            {
+                "name": "time",
+                "value": "30",
+                "type": "num"
+            }
+        ],
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "a69ecb4c.e12f08",
+                "32a4500.dada4b"
+            ]
+        ]
+    },
+    {
+        "id": "474158e8.2de9d8",
+        "type": "ui_chart",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "group": "e64684d0.2951d8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Daily chart one minute AVG",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "auto",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#d62728",
+            "#1873b2",
+            "#2ca02c",
+            "#6b3b97",
+            "#98df8a",
+            "#d29090",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 1160,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d03aadc.2c8705",
+        "type": "subflow:f0813ced.c9d33",
+        "z": "1325d034.c57c5",
+        "name": "GridWatts",
+        "env": [
+            {
+                "name": "time",
+                "value": "30",
+                "type": "num"
+            }
+        ],
+        "x": 600,
+        "y": 160,
+        "wires": [
+            [
+                "474158e8.2de9d8",
+                "3035a920.d7fba6"
+            ]
+        ]
+    },
+    {
+        "id": "c571f51e.a0d208",
+        "type": "subflow:f0813ced.c9d33",
+        "z": "1325d034.c57c5",
+        "name": "Load Watts",
+        "env": [
+            {
+                "name": "time",
+                "value": "30",
+                "type": "num"
+            }
+        ],
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "bb31c2d5.d2c2b",
+                "bb937b62.a6c558"
+            ]
+        ]
+    },
+    {
+        "id": "70215171.36b42",
+        "type": "subflow:f0813ced.c9d33",
+        "z": "1325d034.c57c5",
+        "name": "Battery Watts",
+        "env": [
+            {
+                "name": "time",
+                "value": "30",
+                "type": "num"
+            }
+        ],
+        "x": 600,
+        "y": 520,
+        "wires": [
+            [
+                "ef5a5c74.d2b91"
+            ]
+        ]
+    },
+    {
+        "id": "c728eae5.28ff88",
+        "type": "comment",
+        "z": "1325d034.c57c5",
+        "name": "Grid Is RED",
+        "info": "",
+        "x": 610,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6595cba5.d2c134",
+        "type": "comment",
+        "z": "1325d034.c57c5",
+        "name": "Load Is Blue",
+        "info": "",
+        "x": 610,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "44c374e.de4258c",
+        "type": "comment",
+        "z": "1325d034.c57c5",
+        "name": "PV Is GREEN",
+        "info": "",
+        "x": 590,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d5bb6768.ef9b68",
+        "type": "comment",
+        "z": "1325d034.c57c5",
+        "name": "Battery Is Purple",
+        "info": "",
+        "x": 600,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "bb31c2d5.d2c2b",
+        "type": "switch",
+        "z": "1325d034.c57c5",
+        "name": "allowLoadAvg",
+        "property": "allowLoadAvg",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 900,
+        "y": 520,
+        "wires": [
+            [
+                "474158e8.2de9d8",
+                "3035a920.d7fba6"
+            ]
+        ]
+    },
+    {
+        "id": "c8020254.6bc15",
+        "type": "inject",
+        "z": "1325d034.c57c5",
+        "name": "setAllowsAvg",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 440,
+        "wires": [
+            [
+                "134acac4.009015",
+                "771f3d59.381194",
+                "7859bc38.a09964"
+            ]
+        ]
+    },
+    {
+        "id": "134acac4.009015",
+        "type": "change",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowLoadAvg",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "771f3d59.381194",
+        "type": "change",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowPVAvg",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7859bc38.a09964",
+        "type": "change",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowBatteryAvg",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 190,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e4cacb22.791d98",
+        "type": "link in",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "links": [
+            "9dee1c83.56f4e"
+        ],
+        "x": 155,
+        "y": 200,
+        "wires": [
+            [
+                "48f4ba69.5f3914"
+            ]
+        ]
+    },
+    {
+        "id": "48f4ba69.5f3914",
+        "type": "switch",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Inverter/GridWatts",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/LoadWatts",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/PvWattsTotal",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Pylontech/Watts",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 290,
+        "y": 160,
+        "wires": [
+            [
+                "d03aadc.2c8705",
+                "bb4e5684.6fca68"
+            ],
+            [
+                "c571f51e.a0d208"
+            ],
+            [
+                "27de073c.a3d8c8"
+            ],
+            [
+                "70215171.36b42"
+            ]
+        ],
+        "outputLabels": [
+            "1.GridWatts",
+            "2.LoadWatts",
+            "3.PvWattsTotal",
+            "4.BatteryWatts"
+        ]
+    },
+    {
+        "id": "bb4e5684.6fca68",
+        "type": "change",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowLoadAvg",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb937b62.a6c558",
+        "type": "change",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowPVAvg",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 180,
+        "wires": [
+            [
+                "138509b4.aca436"
+            ]
+        ]
+    },
+    {
+        "id": "a69ecb4c.e12f08",
+        "type": "change",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "allowBatteryAvg",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1030,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e75dbdb4.b68e8",
+        "type": "batch",
+        "z": "f0813ced.c9d33",
+        "name": "PVWattsTotal-Chg",
+        "mode": "interval",
+        "count": 10,
+        "overlap": 0,
+        "interval": "${time}",
+        "allowEmptySequence": false,
+        "topics": [],
+        "x": 190,
+        "y": 340,
+        "wires": [
+            [
+                "a61ff463.105418"
+            ]
+        ]
+    },
+    {
+        "id": "3035a920.d7fba6",
+        "type": "debug",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1470,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "138509b4.aca436",
+        "type": "debug",
+        "z": "1325d034.c57c5",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "$flowContext(\"allowBatteryAvg\")",
+        "targetType": "jsonata",
+        "x": 1460,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "32a4500.dada4b",
+        "type": "switch",
+        "z": "1325d034.c57c5",
+        "name": "allowPVAvg",
+        "property": "allowPVAvg",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 890,
+        "y": 580,
+        "wires": [
+            [
+                "474158e8.2de9d8",
+                "3035a920.d7fba6"
+            ]
+        ]
+    },
+    {
+        "id": "ef5a5c74.d2b91",
+        "type": "switch",
+        "z": "1325d034.c57c5",
+        "name": "allowBatteryAvg",
+        "property": "allowBatteryAvg",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 880,
+        "y": 640,
+        "wires": [
+            [
+                "3035a920.d7fba6",
+                "474158e8.2de9d8"
+            ]
+        ]
+    },
+    {
+        "id": "7ff90797.a5e538",
+        "type": "link in",
+        "z": "b12ede4d.d37a8",
+        "name": "",
+        "links": [
+            "9dee1c83.56f4e"
+        ],
+        "x": 175,
+        "y": 20,
+        "wires": [
+            [
+                "89bab7ee.81dcb8"
+            ]
+        ]
+    },
+    {
+        "id": "89bab7ee.81dcb8",
+        "type": "switch",
+        "z": "b12ede4d.d37a8",
+        "name": "Inverter Status",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Inverter/Name",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/InverterMode",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/GridKwUse",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/BatteryKwUse",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/SolarKwUse",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/TotalKwUse",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/MaxLoadDay",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/MaxPvDay",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Inverter/Solar_Efficiency",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 9,
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "fb23eb86.e7b588",
+                "a04214c6.d5afa8"
+            ],
+            [
+                "dfb2f5ad.ae9788",
+                "a04214c6.d5afa8"
+            ],
+            [
+                "a6af0927.fedc18",
+                "a04214c6.d5afa8"
+            ],
+            [
+                "7befd988.2cef98"
+            ],
+            [
+                "fca9484d.401548"
+            ],
+            [
+                "a1d8a385.dfbb8"
+            ],
+            [
+                "19e3498c.549ac6"
+            ],
+            [
+                "7afb1195.1bf77"
+            ],
+            [
+                "fa0d01ba.a40fc"
+            ]
+        ],
+        "outputLabels": [
+            "name",
+            "mode",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "id": "fb23eb86.e7b588",
+        "type": "ui_text",
+        "z": "b12ede4d.d37a8",
+        "group": "6a5b0a19.9ee824",
+        "order": 1,
+        "width": 10,
+        "height": 1,
+        "name": "",
+        "label": "Name",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 430,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "dfb2f5ad.ae9788",
+        "type": "ui_text",
+        "z": "b12ede4d.d37a8",
+        "group": "6a5b0a19.9ee824",
+        "order": 2,
+        "width": 12,
+        "height": 1,
+        "name": "",
+        "label": "Mode",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 430,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a6af0927.fedc18",
+        "type": "ui_text",
+        "z": "b12ede4d.d37a8",
+        "group": "6a5b0a19.9ee824",
+        "order": 9,
+        "width": 2,
+        "height": 2,
+        "name": "",
+        "label": "GridKw",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 440,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "7afb1195.1bf77",
+        "type": "ui_text",
+        "z": "b12ede4d.d37a8",
+        "group": "6a5b0a19.9ee824",
+        "order": 6,
+        "width": 2,
+        "height": 2,
+        "name": "",
+        "label": "Max PV",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 440,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "19e3498c.549ac6",
+        "type": "ui_text",
+        "z": "b12ede4d.d37a8",
+        "group": "6a5b0a19.9ee824",
+        "order": 7,
+        "width": "5",
+        "height": 2,
+        "name": "",
+        "label": "Inverter Max Load",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 470,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "a1d8a385.dfbb8",
+        "type": "ui_text",
+        "z": "b12ede4d.d37a8",
+        "group": "6a5b0a19.9ee824",
+        "order": 11,
+        "width": 3,
+        "height": 2,
+        "name": "",
+        "label": "Total KW",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 440,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "7befd988.2cef98",
+        "type": "ui_text",
+        "z": "b12ede4d.d37a8",
+        "group": "6a5b0a19.9ee824",
+        "order": 8,
+        "width": "3",
+        "height": 2,
+        "name": "",
+        "label": "Battery KW",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 450,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "fca9484d.401548",
+        "type": "ui_text",
+        "z": "b12ede4d.d37a8",
+        "group": "6a5b0a19.9ee824",
+        "order": 10,
+        "width": 2,
+        "height": 2,
+        "name": "",
+        "label": "Solar KW",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 440,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "fa0d01ba.a40fc",
+        "type": "ui_text",
+        "z": "b12ede4d.d37a8",
+        "group": "6a5b0a19.9ee824",
+        "order": 5,
+        "width": "4",
+        "height": 2,
+        "name": "",
+        "label": "Solar Efficiency",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 460,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2f88a84.ee40558",
+        "type": "debug",
+        "z": "b12ede4d.d37a8",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 230,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "9b04949e.36c118",
+        "type": "ui_template",
+        "z": "b12ede4d.d37a8",
+        "d": true,
+        "group": "6a5b0a19.9ee824",
+        "name": "",
+        "order": 14,
+        "width": 16,
+        "height": 1,
+        "format": "<div ng-bind-html=\"msg.payload\" \nstyle=\"background-color:red;\">\n    \n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 540,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "131c1c8.41a6ce4",
+        "type": "template",
+        "z": "b12ede4d.d37a8",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div style=\"display: grid;\">\n<div style=\"grid-column: 1 / 4;\">{{payload.Inverter/Name}}</div> \n<div style=\"grid-column: 2 / 3;\">{{payload.Inverter/InverterMode}}</div>\n<div>{{payload.Inverter/GridKwUse}}</div>\n</div>",
+        "output": "str",
+        "x": 280,
+        "y": 780,
+        "wires": [
+            [
+                "9b04949e.36c118",
+                "2f88a84.ee40558"
+            ]
+        ]
+    },
+    {
+        "id": "a04214c6.d5afa8",
+        "type": "join",
+        "z": "b12ede4d.d37a8",
+        "name": "Stuff",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 180,
+        "y": 640,
+        "wires": [
+            [
+                "131c1c8.41a6ce4",
+                "2f88a84.ee40558"
+            ]
+        ]
+    }
+]
