@@ -1,0 +1,12 @@
+{
+    "name": "omeSola-dash",
+    "description": "ome sola dash",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "omeSola-Dash.json",
+            "credentialsFile": "omeSola-Dash_cred.json"
+        }
+    }
+}
